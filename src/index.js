@@ -1,5 +1,5 @@
 // @ts-check
-import puppeteer from 'puppeteer';
+import puppeteer, { KnownDevices } from 'puppeteer';
 import puppeteerToIstanbul from 'puppeteer-to-istanbul';
 import { writeFileSync } from "fs";
 
@@ -51,7 +51,7 @@ export default {
 
     if (Boolean(emulationArg)) {
       const [, emulationDevice] = emulationArg.split('=');
-      const device = puppeteer.devices[emulationDevice];
+      const device = KnownDevices[emulationDevice];
 
       if (!device) throw new Error('Emulation device is not supported');
 
@@ -73,11 +73,11 @@ export default {
   async closeBrowser(id) {
     const page = this.openedPages[id];
 
-    try {
-      await this._stopCoverage(page);
-    } catch (error) {
-      console.debug(error);
-    }
+    await this._stopCoverage(page);
+    // try {
+    // } catch (error) {
+    //   console.debug(error);
+    // }
 
     delete this.openedPages[id];
     await this.browser?.close();
