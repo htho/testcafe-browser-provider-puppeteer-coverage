@@ -1,4 +1,4 @@
-const span = document.querySelector('#time-now');
+const span = document.querySelector('#counter');
 
 let ctr = 0;
 export default function update() {

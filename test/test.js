@@ -1,7 +1,7 @@
 import Page from './page-model';
 
 fixture `e2e tests`
-.page `http://localhost:5000/`
+.page `http://localhost:3000/`
 ;
 
 const page = new Page();

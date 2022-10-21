@@ -11,7 +11,7 @@
     // =============================================================================
 
     // #region src\update.js
-    const span = document.querySelector('#time-now');
+    const span = document.querySelector('#counter');
 
     let ctr = 0;
     function update() {
