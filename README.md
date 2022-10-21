@@ -1,33 +1,31 @@
-# testcafe-browser-provider-puppeteer
-[![Build Status](https://travis-ci.org/jdobosz/testcafe-browser-provider-puppeteer.svg)](https://travis-ci.org/jdobosz/testcafe-browser-provider-puppeteer)
-[![npm version](https://badge.fury.io/js/testcafe-browser-provider-puppeteer.svg)](https://badge.fury.io/js/testcafe-browser-provider-puppeteer)
+# testcafe-browser-provider-puppeteer-coverage
 
-This is the [puppeteer](https://github.com/GoogleChrome/puppeteer)/chromium browser provider plugin for [TestCafe](http://devexpress.github.io/testcafe).
-It allows to run tastcafe e2e tests headless in CI pipeline without any external dependency like xvfb, since everything what is needed is installed via npm.
+This is the [puppeteer-coverage](https://pptr.dev/api/puppeteer.coverage)/chromium browser provider plugin for [TestCafe](http://devexpress.github.io/testcafe).
+It runs tastcafe e2e tests headless and stores code coverage in an istanbul compatible format using [puppeteer-to-istanbul](https://github.com/istanbuljs/puppeteer-to-istanbul)
+
+This is a fork of [testcafe-browser-provider-puppeteer](https://github.com/jdobosz/testcafe-browser-provider-puppeteer). Everything regarding the configuration applies to this.
 
 ## Install
 
-```
-npm install --save-dev testcafe-browser-provider-puppeteer
+```cmd
+npm install --save-dev testcafe-browser-provider-puppeteer-coverage
 ```
 
 ## Usage
 
-
 When you run tests from the command line, use the provider name when specifying browsers:
 
-```
-testcafe puppeteer 'path/to/test/file.js'
+```cmd
+testcafe puppeteer-coverage 'path/to/test/file.js'
 ```
 
-
-When you use API, pass the provider name to the `browsers()` method:
+When you use the API, pass the provider name to the `browsers()` method:
 
 ```js
 testCafe
     .createRunner()
     .src('path/to/test/file.js')
-    .browsers('puppeteer')
+    .browsers('puppeteer-coverage')
     .run();
 ```
 
@@ -41,27 +39,29 @@ On same older linux distributions, fails chromium due to sandbox issues - see [t
 
 You can try in such case running the plugin without sandbox restriction
 
- ```
+ ```cmd
 testcafe puppeteer:no_sandbox 'path/to/test/file.js'
-
 ```
 
 In order to speedup CI you can provide custom executable of chromium browser instead to download it all the time:
 
-```
+```javascript
 runner
-  .browsers(['puppeteer:no_sandbox?/usr/bin/chromium-browser'])
+  .browsers(['puppeteer-coverage:no_sandbox?/usr/bin/chromium-browser'])
 
 
 runner
-  .browsers(['puppeteer:?/usr/bin/chromium-browser'])
-
+  .browsers(['puppeteer-coverage:?/usr/bin/chromium-browser'])
 ```
 
 ## Author
-Jacek Dobosz
+
+Hauke Thorenz
 
 ## Contributors
+
+Jacek Dobosz
+
 Lukasz Szmit
 
 Pedro Scaff

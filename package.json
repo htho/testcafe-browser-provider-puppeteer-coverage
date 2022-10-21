@@ -1,14 +1,18 @@
 {
-  "name": "testcafe-browser-provider-puppeteer",
+  "name": "testcafe-browser-provider-puppeteer-coverage",
   "version": "1.5.2",
-  "description": "puppeteer TestCafe browser provider plugin.",
-  "repository": "https://github.com/jdobosz/testcafe-browser-provider-puppeteer",
-  "homepage": "https://github.com/jdobosz/testcafe-browser-provider-puppeteer",
+  "description": "puppeteer TestCafe browser provider plugin with code coverage enabled.",
+  "repository": "https://github.com/htho/testcafe-browser-provider-puppeteer-coverage",
+  "homepage": "https://github.com/htho/testcafe-browser-provider-puppeteer-coverage",
   "author": {
+    "name": "htho",
+    "email": "htho@thorenz.net"
+  },
+  "contributors": [
+    {
     "name": "jdobosz",
     "email": "jacek@dobosz.at"
   },
-  "contributors": [
     {
       "name": "Lukasz Szmit",
       "email": "lukasz.szmit@workday.com"
