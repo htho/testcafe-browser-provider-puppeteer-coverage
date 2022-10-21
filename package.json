@@ -10,9 +10,9 @@
   },
   "contributors": [
     {
-    "name": "jdobosz",
-    "email": "jacek@dobosz.at"
-  },
+      "name": "jdobosz",
+      "email": "jacek@dobosz.at"
+    },
     {
       "name": "Lukasz Szmit",
       "email": "lukasz.szmit@workday.com"
@@ -33,8 +33,10 @@
   ],
   "license": "MIT",
   "dependencies": {
-    "@babel/runtime": "^7.0.0",
-    "puppeteer": "^1.20.0"
+    "@babel/runtime": "^7.19.4",
+    "babel-plugin-istanbul": "^6.1.1",
+    "puppeteer": "^19.0.0",
+    "puppeteer-to-istanbul": "^1.4.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.0.0",

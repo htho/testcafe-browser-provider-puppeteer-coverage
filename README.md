@@ -29,6 +29,24 @@ testCafe
     .run();
 ```
 
+## Coverage
+
+Running the tests creates a `.nyc_output` directory.
+Use for example `nyc report --reporter=html` to create a human readable coverage report.
+
+## Caveats
+
+It is not (yet) possible to use sourcemaps to map the coverage back to the original sources.
+This is because
+
+* [source-map](https://github.com/mozilla/source-map/issues/261) has some difficulties
+finding the correct position in the original source.
+* coverage ranges may span multiple input files
+
+## Workarounds
+
+In order to analyze the coverage, the bundle should be kept in a human readable format.
+
 ## Device Emulation
 
 If you want to emulate another device you can run `pupeteer:emulate=<Device name>`. The supported devices are listed in the [Puppeteer DeviceDescriptors](https://github.com/puppeteer/puppeteer/blob/master/lib/DeviceDescriptors.js).
